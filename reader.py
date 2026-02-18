@@ -1,3 +1,9 @@
+import argparse
+
+parser =  argparse.ArgumentParser()
+parser.add_argument("file", help="txt file to parse")
+args = parser.parse_args()
+
 
 def parse_file(filename, keyword):
     f = open(filename, encoding="utf-8")
@@ -7,4 +13,4 @@ def parse_file(filename, keyword):
             print(line, end='')
     f.close()
 
-parse_file('test1.txt', 'fox')
+parse_file(args.file, "apple")
